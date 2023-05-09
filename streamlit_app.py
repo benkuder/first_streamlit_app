@@ -73,7 +73,7 @@ try:
        my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
        streamlit.write(insert_row_snowflake(add_my_fruit))
        my_cnx.close()
-  add_my_fruit = ''
+  add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 except URLError as e:
     streamlit.error()
 
